@@ -80,7 +80,7 @@ local theme = lush(function(injected_functions)
     -- MsgArea        { }, -- Area for messages and cmdline
     -- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg        { }, -- |more-prompt|
-    NonText        { fg = palette.black }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    NonText        { fg = palette.light_black }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal         { fg = palette.front, bg = palette.back }, -- Normal text
     NormalFloat    { fg = palette.front, bg = palette.back }, -- Normal text in floating windows.
     -- FloatBorder    { }, -- Border of floating windows.
@@ -88,7 +88,7 @@ local theme = lush(function(injected_functions)
     -- NormalNC       { }, -- normal text in non-current windows
     -- point
     Pmenu          { fg = palette.red, bg = palette.back }, -- Popup menu: Normal item.
-    PmenuSel       { fg = palette.red, bg = palette.light_black }, -- Popup menu: Selected item.
+    PmenuSel       { fg = palette.light_white, bg = palette.light_black }, -- Popup menu: Selected item.
     -- PmenuKind      { }, -- Popup menu: Normal item "kind"
     -- PmenuKindSel   { }, -- Popup menu: Selected item "kind" 
     -- PmenuExtra     { }, -- Popup menu: Normal item "extra text" 
@@ -112,7 +112,7 @@ local theme = lush(function(injected_functions)
     Visual         { bg = palette.light_black }, -- Visual mode selection
     VisualNOS      { fg = palette.black }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg     { fg = palette.red }, -- Warning messages
-    Whitespace     { fg = palette.black }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    Whitespace     { fg = palette.light_black }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     Winseparator   { fg = palette.black }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     WildMenu       { fg = palette.red }, -- Current match in 'wildmenu' completion
     WinBar         { fg = palette.light_black }, -- Window bar of current window
