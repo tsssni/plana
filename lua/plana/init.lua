@@ -43,38 +43,38 @@ local theme = lush(function(injected_functions)
     --
     -- See :h highlight-groups
     --
-    ColorColumn    { fg = palette.light_white, bg = palette.red }, -- Columns set with 'colorcolumn'
+    ColorColumn    { fg = palette.black, bg = palette.red }, -- Columns set with 'colorcolumn'
     Conceal        { fg = palette.light_black }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor         { fg = palette.blue }, -- Character under the cursor
     CurSearch      { fg = palette.black, bg = palette.light_magenta }, -- Highlighting a search pattern under the cursor (see 'hlsearch')
     lCursor        { fg = palette.white }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM       { fg = palette.white }, -- Like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn   { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine     { }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorColumn   { bg = palette.back }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorLine     { bg = palette.back }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLineNr   { fg = palette.light_magenta }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    -- CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line
+    -- CursorLineSign { }, -- Like SignColumn when 'cursorline' is set for the cursor line
+    LineNr         { fg = palette.magenta }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    -- LineNrAbove    { }, -- Line number for when the 'relativenumber' option is set, above the cursor line
+    -- LineNrBelow    { }, -- Line number for when the 'relativenumber' option is set, below the cursor line
     Directory      { fg = palette.red }, -- Directory names (and other special names in listings)
     DiffAdd        { fg = palette.light_green }, -- Diff mode: Added line |diff.txt|
     DiffChange     { fg = palette.light_yellow }, -- Diff mode: Changed line |diff.txt|
     DiffDelete     { fg = palette.red }, -- Diff mode: Deleted line |diff.txt|
     DiffText       { fg = palette.light_blue }, -- Diff mode: Changed text within a changed line |diff.txt|
-    GitSignsAdd        { fg = palette.light_green }, -- Diff mode: Added line |diff.txt|
-    GitSignsChange     { fg = palette.light_yellow }, -- Diff mode: Changed line |diff.txt|
-    GitSignsDelete     { fg = palette.red }, -- Diff mode: Deleted line |diff.txt|
+    GitSignsAdd    { fg = palette.light_green }, -- Diff mode: Added line |diff.txt|
+    GitSignsChange { fg = palette.light_yellow }, -- Diff mode: Changed line |diff.txt|
+    GitSignsDelete { fg = palette.red }, -- Diff mode: Deleted line |diff.txt|
     EndOfBuffer    { fg = palette.blue }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     TermCursor     { fg = palette.black, bg = palette.light_black }, -- Cursor in a focused terminal
     TermCursorNC   { fg = palette.light_black }, -- Cursor in an unfocused terminal
-    ErrorMsg       { fg = palette.light_white, bg = palette.red }, -- Error messages on the command line
+    ErrorMsg       { fg = palette.black, bg = palette.red }, -- Error messages on the command line
     VertSplit      { fg = palette.black }, -- Column separating vertically split windows
-    Folded         { fg = palette.light_white, bg = palette.light_red }, -- Line used for closed folds
-    FoldColumn     { fg = palette.light_white, bg = palette.light_red }, -- 'foldcolumn'
+    Folded         { fg = palette.black, bg = palette.light_red }, -- Line used for closed folds
+    FoldColumn     { fg = palette.black, bg = palette.light_red }, -- 'foldcolumn'
     SignColumn     { fg = palette.red, bg = palette.back }, -- Column where |signs| are displayed
     IncSearch      { fg = palette.black, bg = palette.light_magenta }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Substitute     { fg = palette.black, bg = palette.light_magenta }, -- |:substitute| replacement text highlighting
-    LineNr         { fg = palette.magenta }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    -- LineNrAbove    { }, -- Line number for when the 'relativenumber' option is set, above the cursor line
-    -- LineNrBelow    { }, -- Line number for when the 'relativenumber' option is set, below the cursor line
-    CursorLineNr   { fg = palette.light_magenta }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    -- CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line
-    -- CursorLineSign { }, -- Like SignColumn when 'cursorline' is set for the cursor line
     MatchParen     { fg = palette.yellow }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     -- ModeMsg        { }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea        { }, -- Area for messages and cmdline
@@ -87,14 +87,14 @@ local theme = lush(function(injected_functions)
     -- FloatTitle     { }, -- Title of floating windows.
     -- NormalNC       { }, -- normal text in non-current windows
     -- point
-    Pmenu          { fg = palette.light_red, bg = palette.back }, -- Popup menu: Normal item.
-    PmenuSel       { fg = palette.light_red, bg = palette.black }, -- Popup menu: Selected item.
+    Pmenu          { fg = palette.red, bg = palette.back }, -- Popup menu: Normal item.
+    PmenuSel       { fg = palette.red, bg = palette.light_black }, -- Popup menu: Selected item.
     -- PmenuKind      { }, -- Popup menu: Normal item "kind"
     -- PmenuKindSel   { }, -- Popup menu: Selected item "kind" 
     -- PmenuExtra     { }, -- Popup menu: Normal item "extra text" 
     -- PmenuExtraSel  { }, -- Popup menu: Selected item "extra text" 
     PmenuSbar      { fg = palette.light_black, bg = palette.black }, -- Popup menu: Scrollbar.
-    PmenuThumb     { fg = palette.light_white, bg = palette.red }, -- Popup menu: Thumb of the scrollbar. l
+    PmenuThumb     { fg = palette.black, bg = palette.red }, -- Popup menu: Thumb of the scrollbar. l
     Question       { fg = palette.green }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine   { fg = palette.black, bg = palette.light_magenta }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search         { fg = palette.black, bg = palette.light_magenta }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
@@ -117,13 +117,13 @@ local theme = lush(function(injected_functions)
     WildMenu       { fg = palette.red }, -- Current match in 'wildmenu' completion
     WinBar         { fg = palette.light_black }, -- Window bar of current window
     WinBarNC       { fg = palette.light_black }, -- Window bar of not-current windows
-    DashboardHeader { fg = palette.red },
-    DashboardFooter { fg = palette.black },
+    DashboardHeader       { fg = palette.red },
+    DashboardFooter       { fg = palette.black },
     DashboardProjectTitle { fg = palette.cyan },
-    DashboardMruTitle { fg = palette.cyan },
-    DashboardShortCut { fg = palette.cyan },
-    InclineNormal {},
-    InclineNormalNC {},
+    DashboardMruTitle     { fg = palette.cyan },
+    DashboardShortCut     { fg = palette.cyan },
+    InclineNormal         {},
+    InclineNormalNC       {},
 
     -- Commented-out groups should chain up to their preferred (*) group
     -- by default.
@@ -158,7 +158,7 @@ local theme = lush(function(injected_functions)
     -- Macro          { }, --   Same as Define
     -- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = palette.light_red }, -- (*) int, long, char, etc.
+    Type           { fg = palette.red }, -- (*) int, long, char, etc.
     -- StorageClass   { }, --   static, register, volatile, etc.
     -- Structure      { }, --   struct, union, enum, etc.
     -- Typedef        { }, --   A typedef
@@ -172,7 +172,7 @@ local theme = lush(function(injected_functions)
 
     Underlined     { gui = 'underline', fg = palette.magenta }, -- Text that stands out, HTML links
     Ignore         { fg = palette.light_black }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
-    Error          { fg = palette.light_white, bg = palette.red }, -- Any erroneous construct
+    Error          { fg = palette.black, bg = palette.red }, -- Any erroneous construct
     Todo           { fg = palette.black, bg = palette.light_yellow }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client and diagnostic system. Some
